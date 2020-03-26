@@ -39,8 +39,10 @@ spec:
         - name: JNLP_SERVICE_NAME
           value: {{ .Values.appName }}-jnlp
         {{- range $key := .Values.deployment.env_vars }}
+        {{- if .value }}
         - name: {{ .name }}
           value: {{ .value | quote }} 
+        {{- end }}
         {{- end }}
         image: ' '
         imagePullPolicy: IfNotPresent
