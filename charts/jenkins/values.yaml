@@ -80,13 +80,13 @@ services:
     selector: *name
 
 imagestreams:
-  # Jenkins Imagestream for custom build or external
+  # 🛎 Jenkins Imagestream for custom build or external - default to the custom built one.
   - name: *name
-    external:
-      builder_registry: quay.io
-      builder_repo: openshift
-      builder_image: origin-jenkins
-      builder_imagetag: latest
+    # external:
+    #   builder_registry: quay.io
+    #   builder_repo: openshift
+    #   builder_image: origin-jenkins
+    #   builder_imagetag: latest
   # Jenkins agents image streams
   - name: jenkins-slave-mvn
   - name: jenkins-slave-argocd
